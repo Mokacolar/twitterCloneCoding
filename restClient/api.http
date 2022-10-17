@@ -1,0 +1,60 @@
+//모든 트윗 가져오기
+GET http://localhost:8080/tweets HTTP/1.1
+###
+// 해당 이름의 트윗 가져오기
+GET http://localhost:8080/tweets?username=mokacolar HTTP/1.1
+###
+// 해당 id의 트윗 가져오기
+GET http://localhost:8080/tweets/1 HTTP/1.1
+###
+// 새로운 트윗 만들기
+POST http://localhost:8080/tweets
+Content-Type: application/json; charset=UTF-8
+
+{
+    "text" : "새로 만들어진 트윗입니다.",
+    "name" : "291",
+    "username" : "291"
+}
+
+###
+// 트윗 내용 바꾸기
+PUT http://localhost:8080/tweets/1 HTTP/1.1
+Content-Type: application/json; charset=UTF-8
+
+{
+    "text" : "바뀐 트윗입니다."
+}
+
+###
+// 트윗 삭제
+DELETE http://localhost:8080/tweets/1
+
+
+
+
+###
+// Signup
+POST http://localhost:8080/auth/signup HTTP/1.1
+Content-Type: application/json; charset=UTF-8
+
+{
+    "username" : "jinyong",
+    "password" : "12345",
+    "name" : "jinyong",
+    "email" : "jinyong0826@naver.com"
+}
+
+###
+// Login
+POST http://localhost:8080/auth/login HTTP/1.1
+Content-Type: application/json; charset=UTF-8
+
+{
+    "username" : "jinyong",
+    "password" : "12345",
+}
+
+###
+// Login Copy
+GET http://localhost:8080/auth/me HTTP/1.1
